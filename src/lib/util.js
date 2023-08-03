@@ -23,7 +23,7 @@ export function assign(obj, props) {
 export function deepAssign(target, source) {
 	let out = assign({}, target);
 	for (let i in source) {
-		if (source.hasOwnProperty(i)) {
+		if (Object.prototype.hasOwnProperty(source, i)) {
 			if (target[i] && source[i] && typeof target[i]==='object' && typeof source[i]==='object') {
 				out[i] = deepAssign(target[i], source[i]);
 			}
